@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RegistrationController {
+
     @FXML
     private TextField emailField;
 
@@ -71,18 +72,35 @@ public class RegistrationController {
                 showError("Логин должен содержать 5-20 символов");
                 return;
             }
+            if(password.length() < 8 || password.length() > 20) {
+                showError("Пароль не может содержать меньше 8 символов");
+                return;
+            }
+
             ConnectionToServer connection = new ConnectionToServer();
             connection.connect("localhost", 7777);
             Stage stage = (Stage) registrationBut.getScene().getWindow();
             Model.getInstance().getViewFactory().closeStage(stage);
-
-
             Model.getInstance().getViewFactory().showClientWindow();
 
 
         });
     }
 
+    private void showError(String error) {
+        errorText.setVisible(true);
+        errorText.setText(error);
+    }
+
+    private boolean isValidName(String name) {
+        if (name.length() < 2 || name.length() > 50) return false;
+        for (char c : name.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
 
