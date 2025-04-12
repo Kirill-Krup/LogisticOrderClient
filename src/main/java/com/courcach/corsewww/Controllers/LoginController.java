@@ -42,17 +42,19 @@ public class LoginController {
             String login = loginInput.getText();
             String password = passwordInput.getText();
             if(login.isEmpty() || password.isEmpty()) {
-                errorLabel.setVisible(true);
-                errorLabel.setText("Пожалуйста, заполните все поля");
+                showError("Пожалуйста, заполните все поля");
                 return;
             }
             try {
                 ConnectionToServer connection = new ConnectionToServer();
                 connection.connect("localhost", 7777);
                 String role = connection.authenticate(login, password);
+                if (role == null) {
+                    showError("Неверно введён логин или пароль");
+                    return;
+                }
                 Stage stage = (Stage) enterBut.getScene().getWindow();
                 Model.getInstance().getViewFactory().closeStage(stage);
-
                 switch (role){
                     case "admin":
                         Model.getInstance().getViewFactory().showAdminWindow();
@@ -63,15 +65,15 @@ public class LoginController {
                     case "client":
                         Model.getInstance().getViewFactory().showClientWindow();
                         break;
-                    default:
-                        errorLabel.setVisible(true);
-                        errorLabel.setText("Неверно указан логин или пароль");
                 }
             }catch (IOException | ClassNotFoundException ex) {
-                errorLabel.setVisible(true);
-                errorLabel.setText("Ошибка подключения к серверу");
+                showError("Ошибка подключения к серверу");
                 ex.printStackTrace();
             }
         });
+    }
+    private void showError(String error) {
+        errorLabel.setVisible(true);
+        errorLabel.setText(error);
     }
 }

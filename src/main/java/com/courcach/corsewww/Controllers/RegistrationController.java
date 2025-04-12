@@ -64,8 +64,8 @@ public class RegistrationController {
                 showError("Неверно введена почта");
                 return;
             }
-            if (!isValidName(name) || !isValidName(surname)) {
-                showError("Имя и фамилия должны содержать только буквы (2-50 символов)");
+            if (name.length() <2 || surname.length()<2 || name.length()>45 || surname.length()>45) {
+                showError("Имя и фамилия должны содержать только буквы (2-45 символов)");
                 return;
             }
             if (login.length() < 5 || login.length() > 20) {
@@ -76,13 +76,22 @@ public class RegistrationController {
                 showError("Пароль не может содержать меньше 8 символов");
                 return;
             }
-
-            ConnectionToServer connection = new ConnectionToServer();
-            connection.connect("localhost", 7777);
-            Stage stage = (Stage) registrationBut.getScene().getWindow();
-            Model.getInstance().getViewFactory().closeStage(stage);
-            Model.getInstance().getViewFactory().showClientWindow();
-
+            try{
+                ConnectionToServer connection = new ConnectionToServer();
+                connection.connect("localhost", 7777);
+                Boolean isSuccess = connection.register(email,name,surname,login,password);
+                if(isSuccess) {
+                    Stage stage = (Stage) registrationBut.getScene().getWindow();
+                    Model.getInstance().getViewFactory().closeStage(stage);
+                    Model.getInstance().getViewFactory().showClientWindow();
+                }
+                else{
+                    showError("Такой пользователь уже зарегистрирован");
+                }
+            }catch (IOException | ClassNotFoundException ex){
+                showError("Ошибка подключения к серверу");
+                ex.printStackTrace();
+            }
 
         });
     }
@@ -92,15 +101,6 @@ public class RegistrationController {
         errorText.setText(error);
     }
 
-    private boolean isValidName(String name) {
-        if (name.length() < 2 || name.length() > 50) return false;
-        for (char c : name.toCharArray()) {
-            if (!Character.isLetter(c)) {
-                return false;
-            }
-        }
-        return true;
-    }
 
 }
 

@@ -23,16 +23,35 @@ public class ConnectionToServer {
 
     public String authenticate(String login, String password) throws IOException, ClassNotFoundException {
         try {
+            String operationType = "LOGIN";
+            out.writeObject(operationType);
             out.writeObject(login);
             out.writeObject(password);
             out.flush();
-
             return (String) in.readObject();
         } finally {
             disconnect();
         }
     }
-
+    
+    
+    public Boolean register(String email, String name, String surname, String login, String password) throws IOException, ClassNotFoundException {
+        try{
+            String operationType = "REGISTER";
+            out.writeObject(operationType);
+            out.writeObject(email);
+            out.writeObject(name);
+            out.writeObject(surname);
+            out.writeObject(login);
+            out.writeObject(password);
+            out.flush();
+            return (Boolean) in.readObject();
+        }finally {
+            disconnect();
+        }
+        
+    }
+    
     public void disconnect() throws IOException {
         try {
             if (out != null) out.close();
