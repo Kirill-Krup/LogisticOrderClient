@@ -56,7 +56,19 @@ public class RegistrationController {
             String password = passwordField.getText();
             if(email.isEmpty() || name.isEmpty() || surname.isEmpty() || login.isEmpty() || password.isEmpty()) {
                 errorText.setVisible(true);
-                errorText.setText("Пожалуйста,заполните все поля");
+                showError("Пожалуйста,заполните все поля");
+                return;
+            }
+            if (!email.contains("@") || !email.contains(".") || email.length() < 5) {
+                showError("Неверно введена почта");
+                return;
+            }
+            if (!isValidName(name) || !isValidName(surname)) {
+                showError("Имя и фамилия должны содержать только буквы (2-50 символов)");
+                return;
+            }
+            if (login.length() < 5 || login.length() > 20) {
+                showError("Логин должен содержать 5-20 символов");
                 return;
             }
             ConnectionToServer connection = new ConnectionToServer();
