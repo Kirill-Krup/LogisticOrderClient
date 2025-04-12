@@ -1,0 +1,21 @@
+.mainPane {
+    -fx-background-color: rgba(128, 128, 128, 0.95);
+}
+
+.mainPane Button{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.mainPane Button:hover {
+    -fx-text-fill: red;
+    -fx-translate-x: -2px;
+    -fx-translate-y: -2px;
+    -fx-font-size: 13px;
+}
+
+.containersForInput {
+    -fx-border-width: 1px solid black;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}

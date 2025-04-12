@@ -1,0 +1,52 @@
+.allScreen Pane{
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.allScreen Button {
+    -fx-cursor: hand;
+}
+
+.topMenu {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+.topMenu Button{
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.topMenu Button:hover{
+    -fx-text-fill: red;
+    -fx-font-size: 13px;
+    -fx-translate-y: -2px;
+}
+
+.menu {
+    -fx-background-color: rgba(97, 9, 133, 0.91);
+    -fx-alignment: center;
+
+}
+
+.menu Button{
+    -fx-text-fill: black;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.menu Button:hover {
+    -fx-translate-x: 5px;
+    -fx-text-fill: red;
+}
+
+.aboutUsPane {
+    -fx-background-color: #322f2f;
+}
+
+.aboutUsPane Button {
+    -fx-background-color: transparent;
+}
+
+.aboutUsPane Button:hover {
+    -fx-text-fill: red;
+}

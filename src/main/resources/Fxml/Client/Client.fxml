@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="1000.0" styleClass="allScreen" stylesheets="@../../Styles/Client.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.courcach.corsewww.Controllers.Client.ClientController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <image>
+            <Image url="@../../Images/backClient.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="mainPane" layoutY="60.0" prefHeight="740.0" prefWidth="1000.0">
+         <children>
+            <Text fill="WHITE" layoutX="362.0" layoutY="254.0" lineSpacing="1.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ДОСТАВКА БЕЗ ГРАНИЦ             ———————————————             • Отслеживание в реальном времени             • Мгновенный расчет стоимости             • 99.9% сроков соблюдено  " textAlignment="CENTER" wrappingWidth="452.13671875">
+               
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Pane fx:id="aboutUsPane" layoutX="346.0" layoutY="10.0" opacity="0.0" prefHeight="678.0" prefWidth="466.0" styleClass="aboutUsPane">
+               <children>
+                  <Text fill="WHITE" layoutX="33.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LogisticOrder – это современная логистическая компания, предлагающая комплексные решения для транспортировки, хранения и управления грузами. Мы стремимся сделать логистику простой, надежной и эффективной для наших клиентов, будь то малый бизнес или крупная корпорация.                 Наша миссия                Мы помогаем бизнесу развиваться, обеспечивая бесперебойные поставки, оптимизируя цепочки снабжения и сокращая издержки. Наша цель – стать вашим надежным партнером в логистике, предлагая индивидуальные решения и высокий уровень сервиса.                 Почему выбирают нас?                  ✅ Скорость и надежность – четкие сроки доставки и контроль на каждом этапе.                ✅ Гибкие условия – работаем с разными видами грузов и масштабами поставок.                ✅ Прозрачность – отслеживание грузов в режиме реального времени.                ✅ Команда профессионалов – опытные логисты, которые знают, как решить любую задачу.                 Наши услуги                🔹 Грузоперевозки (авто-, авиа-, морские, ж/д)                🔹 Складская логистика (хранение, комплектация, кросс-докинг)                🔹 Таможенное оформление                🔹 Управление цепочками поставок                 LogisticOrder – ваш надежный партнер в мире логистики! Свяжитесь с нами, и мы найдем оптимальное решение для вашего бизнеса. 🚛✈️📦" wrappingWidth="398.787109375">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Text>
+                  <Button fx:id="backFromAboutUsBut" layoutX="410.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="42.0" text="Ⅹ" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <HBox fx:id="topPane" alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="1000.0" styleClass="topMenu">
+         <children>
+            <Button fx:id="menuBut" cancelButton="true" mnemonicParsing="false" prefHeight="38.0" prefWidth="42.0" styleClass="allScreen" text="≡">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Text fx:id="homeText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Главная" underline="true" wrappingWidth="56.20819091796875">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Text>
+            <Button fx:id="aboutUsBut" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="О нас" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="20.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="exitBut" mnemonicParsing="false" text="Выйти">
+               <HBox.margin>
+                  <Insets left="700.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="menuBox" opacity="0.0" prefHeight="800.0" prefWidth="273.0" styleClass="menu">
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" styleClass="menu">
+               <image>
+                  <Image url="@../../Images/logo.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu" text="LogisticOrder">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="addNewOrder" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" styleClass="menu" text="Оформить заказ">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="checkUserHistory" mnemonicParsing="false" prefHeight="38.0" prefWidth="176.0" styleClass="menu" text="Посмотреть историю">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="checkMyOrder" mnemonicParsing="false" prefHeight="31.0" prefWidth="190.0" styleClass="menu" text="Ход выполнения заказа">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="backBut" mnemonicParsing="false" text="Назад">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

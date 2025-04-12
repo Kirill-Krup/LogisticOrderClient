@@ -1,0 +1,67 @@
+/* Right Pane */
+.vrigntcontainer{
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Top pane */
+.hrightContainer{
+    -fx-alignment: center;
+}
+
+.hrightContainer Button{
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.hrightContainer Button:hover{
+    -fx-text-fill: red;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-translate-y: -4px;
+}
+
+/* Center side */
+.rbPane {
+    -fx-alignment: center;
+}
+
+.rbPane Button{
+    -fx-border-radius: 20px;
+    -fx-font-weight: bold;
+}
+
+.rbPane Button:hover{
+    -fx-text-fill: red;
+    -fx-cursor: hand;
+    -fx-translate-y: -2px;
+}
+
+.rbPane TextField{
+    -fx-cursor: hand;
+    -fx-background-radius: 50px;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-border-radius: 50px;
+}
+
+.rbPane PasswordField{
+    -fx-cursor: hand;
+    -fx-background-radius: 50px;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-border-radius: 50px;
+}
+
+/* Left side */
+.login_logo_container {
+    -fx-background-color: #5a6e56;
+    -fx-alignment: center;
+}
+
+.login_logo_container Text{
+    -fx-font-size: 2em;
+    -fx-fill: black;
+}
+

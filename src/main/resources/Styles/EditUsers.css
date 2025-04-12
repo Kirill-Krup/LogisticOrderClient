@@ -1,0 +1,20 @@
+.mainPane {
+    -fx-background-color: rgba(255, 255, 255, 0.92);
+}
+.mainPane Button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: black;
+}
+
+.mainPane Button:hover {
+    -fx-text-fill: red;
+    -fx-translate-x: -2px;
+    -fx-translate-y: -2px;
+    -fx-font-size: 16px;
+}
+
+.but{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}

@@ -1,0 +1,76 @@
+package com.courcach.corsewww.Controllers;
+
+import com.courcach.corsewww.Models.ConnectionToServer;
+import com.courcach.corsewww.Models.Model;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+public class RegistrationController {
+    @FXML
+    private TextField emailField;
+
+    @FXML
+    private TextField loginField;
+
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private TextField surnameField;
+
+    @FXML
+    private Text errorText;
+
+    @FXML
+    private Button registrationBut;
+
+    @FXML
+    private Button signInBut;
+
+
+
+    public void initialize() {
+        signInBut.setOnAction(e -> {
+            Stage stage = (Stage) signInBut.getScene().getWindow();
+            Model.getInstance().getViewFactory().closeStage(stage);
+            Model.getInstance().getViewFactory().showLoginWindow();
+        });
+
+        registrationBut.setOnAction(e -> {
+            String email = emailField.getText();
+            String name = nameField.getText();
+            String surname = surnameField.getText();
+            String login = loginField.getText();
+            String password = passwordField.getText();
+            if(email.isEmpty() || name.isEmpty() || surname.isEmpty() || login.isEmpty() || password.isEmpty()) {
+                errorText.setVisible(true);
+                errorText.setText("Пожалуйста,заполните все поля");
+                return;
+            }
+            ConnectionToServer connection = new ConnectionToServer();
+            connection.connect("localhost", 7777);
+            Stage stage = (Stage) registrationBut.getScene().getWindow();
+            Model.getInstance().getViewFactory().closeStage(stage);
+
+
+            Model.getInstance().getViewFactory().showClientWindow();
+
+
+        });
+    }
+
+
+}
+

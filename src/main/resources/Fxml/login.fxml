@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Styles/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.courcach.corsewww.Controllers.LoginController">
+   <children>
+      <VBox layoutX="-1.0" prefHeight="400.0" prefWidth="185.0" styleClass="login_logo_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="68.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="login_logo_container">
+               <image>
+                  <Image url="@../Images/logo.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login_logo_container" text="LogisticOrder" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="400.0" fitWidth="424.0" layoutX="184.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/background.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="184.0" layoutY="7.0" prefHeight="400.0" prefWidth="414.0" styleClass="vrigntcontainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="42.0" prefWidth="424.0" styleClass="hrightContainer">
+               <children>
+                  <Button layoutX="140.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" styleClass="hrightContainer" text="Sign In" textFill="WHITE" />
+                  <Button fx:id="signUpBut" layoutX="212.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" styleClass="hrightContainer" text="Sign Up" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane prefHeight="345.0" prefWidth="424.0" styleClass="rbPane">
+               <children>
+                  <Text fill="WHITE" layoutX="143.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="158.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите логин">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="loginInput" layoutX="132.0" layoutY="92.0" prefHeight="25.0" prefWidth="160.0" promptText="Логин">
+                     <opaqueInsets>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <Text fill="WHITE" layoutX="152.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите пароль">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="passwordInput" layoutX="132.0" layoutY="161.0" prefHeight="25.0" prefWidth="160.0" promptText="Пароль" />
+                  <Button fx:id="enterBut" layoutX="176.0" layoutY="250.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Вход" />
+                  <Text fx:id="errorLabel" fill="RED" layoutX="88.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="244.8359375">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

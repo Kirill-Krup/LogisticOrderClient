@@ -1,0 +1,21 @@
+.backBut {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.bottomPane {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+}
+
+.bottomPane Button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: black;
+}
+
+.bottomPane Button:hover {
+    -fx-text-fill: red;
+    -fx-translate-y: -2px;
+    -fx-translate-x: -2px;
+    -fx-font-size: 13px;
+}

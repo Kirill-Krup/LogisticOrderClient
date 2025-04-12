@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" stylesheets="@../../Styles/AddNewOrder.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.courcach.corsewww.Controllers.Client.AddNewOrderController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="1000.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../Images/backForClient.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="127.0" layoutY="14.0" prefHeight="703.0" prefWidth="746.0" styleClass="mainPane">
+         <children>
+            <Text layoutX="278.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Создание новой заявки" wrappingWidth="189.330078125">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="phone" layoutX="56.0" layoutY="137.0" prefHeight="29.0" prefWidth="243.0" promptText="Введите ваш номер телефона" styleClass="containersForInput" />
+            <TextField fx:id="fio" layoutX="56.0" layoutY="97.0" prefHeight="29.0" prefWidth="243.0" promptText="ФИО" styleClass="containersForInput" />
+            <ComboBox fx:id="selectTypeOfDelivery" layoutX="56.0" layoutY="178.0" prefHeight="29.0" prefWidth="243.0" promptText="Выберите вариант доставки" styleClass="containersForInput">
+               <items>
+
+               </items>
+            </ComboBox>
+
+
+            <TextField fx:id="adressTextField" layoutX="56.0" layoutY="223.0" mouseTransparent="true" opacity="0.0" prefHeight="29.0" prefWidth="243.0" promptText="Введите адрес доставки" styleClass="containersForInput" />
+            <Text layoutX="59.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите материалы">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <ListView layoutX="56.0" layoutY="306.0" prefHeight="296.0" prefWidth="653.0" />
+            <Button fx:id="deleteBut" layoutX="56.0" layoutY="638.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" styleClass="mainPane" text="Очистить" />
+            <Button layoutX="552.0" layoutY="638.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="157.0" styleClass="mainPane" text="Оформить заказ" />
+            <Text layoutX="332.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Цена: ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="382.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5000">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="selectAdress" layoutX="56.0" layoutY="223.0" mouseTransparent="true" opacity="0.0" prefHeight="29.0" prefWidth="243.0" promptText="Выберите пункт выдачи" styleClass="containersForInput" />
+            <Text fx:id="redStar" fill="#ff0101" layoutX="302.0" layoutY="244.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="7.88885498046875">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="redStar1" fill="#ff0101" layoutX="302.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="7.88885498046875">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="redStar11" fill="#ff0101" layoutX="302.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="7.88885498046875">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="redStar12" fill="#ff0101" layoutX="302.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" wrappingWidth="7.88885498046875">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/previous.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backFromFirstBut" layoutX="10.0" layoutY="7.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-cursor: hand;" />
+   </children>
+</AnchorPane>
